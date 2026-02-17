@@ -37,7 +37,7 @@ export function HeroSection({
               priority
             />
           </div>
-          <div className="absolute inset-0 z-[5] bg-gradient-to-r from-admf-green from-30% via-admf-green/70 via-50% to-transparent to-65%" />
+          <div className="absolute inset-0 z-[5] bg-gradient-to-r from-admf-green from-25% to-transparent to-50%" />
         </>
       )}
       <div className="section-container py-20 md:py-32 relative z-10">
