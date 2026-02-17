@@ -37,6 +37,7 @@ export default function ContactPage() {
         title="We'd Love to Hear From You"
         subtitle="Whether you have questions about our programmes, want to discuss a partnership, or are interested in volunteering, our team is here to help."
         dark
+        backgroundImage="/images/heroes/hero-contact.png"
       />
 
       <section className="bg-white section-padding">

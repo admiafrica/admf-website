@@ -64,6 +64,7 @@ export default function AboutPage() {
         subtitle="ADMI Foundation is the philanthropic arm of the Africa Digital Media Institute, dedicated to removing financial barriers for talented young creatives across the continent."
         primaryCta={{ label: "Our Programmes", href: "/programmes" }}
         secondaryCta={{ label: "Get Involved", href: "/get-involved" }}
+        backgroundImage="/images/heroes/hero-about.png"
       />
 
       <StatsBar stats={stats} />
@@ -158,6 +159,7 @@ export default function AboutPage() {
                     width={80}
                     height={80}
                     className="object-cover"
+                    unoptimized
                   />
                 </div>
                 <h3 className="font-bold text-foreground mb-1">{person.name}</h3>

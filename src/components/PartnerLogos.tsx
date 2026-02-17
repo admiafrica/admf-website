@@ -31,6 +31,7 @@ export function PartnerLogos() {
                 width={160}
                 height={60}
                 className="object-contain max-w-full max-h-full"
+                unoptimized
               />
             </div>
           ))}

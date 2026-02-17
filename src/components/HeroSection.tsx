@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 interface HeroSectionProps {
   label?: string;
@@ -7,6 +8,7 @@ interface HeroSectionProps {
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
   dark?: boolean;
+  backgroundImage?: string;
 }
 
 export function HeroSection({
@@ -16,13 +18,28 @@ export function HeroSection({
   primaryCta,
   secondaryCta,
   dark = true,
+  backgroundImage,
 }: HeroSectionProps) {
   return (
     <section
-      className={dark ? "bg-admf-green" : "bg-white"}
+      className={`${dark ? "bg-admf-green" : "bg-white"} relative overflow-hidden`}
       style={{ paddingTop: 72 }}
     >
-      <div className="section-container py-20 md:py-32">
+      {backgroundImage && (
+        <>
+          <div className="absolute inset-0 z-0">
+            <Image
+              src={backgroundImage}
+              alt=""
+              fill
+              className="object-cover opacity-20"
+              unoptimized
+            />
+          </div>
+          <div className="absolute inset-0 z-0 bg-gradient-to-r from-admf-green/90 to-admf-green/70" />
+        </>
+      )}
+      <div className="section-container py-20 md:py-32 relative z-10">
         <div className="max-w-3xl">
           {label && (
             <span className={`section-label ${dark ? "section-label-dark" : "section-label-light"}`}>

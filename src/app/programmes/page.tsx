@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { HeroSection } from "@/components/HeroSection";
 import { CTASection } from "@/components/CTASection";
 
@@ -80,6 +81,7 @@ export default function ProgrammesPage() {
         subtitle="Whether you need funding, guidance, or tools, ADMI Foundation has a programme to support your journey into the creative industries."
         primaryCta={{ label: "Apply Now", href: "/contact" }}
         secondaryCta={{ label: "Check Eligibility", href: "#scholarships" }}
+        backgroundImage="/images/heroes/hero-programmes.png"
       />
 
       {/* Scholarships */}
@@ -176,6 +178,40 @@ export default function ProgrammesPage() {
               <div key={cat.category} className="card-light p-6">
                 <h3 className="font-bold text-foreground mb-2">{cat.category}</h3>
                 <p className="text-muted text-sm">{cat.items}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Students in Action */}
+      <section className="bg-warm section-padding">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <span className="section-label section-label-light">Success in Action</span>
+            <h2 className="section-heading section-heading-light mb-4">
+              Empowered with the Right Tools
+            </h2>
+            <p className="section-subheading section-subheading-light max-w-2xl mx-auto">
+              With access to professional equipment and mentorship, our students
+              are creating award-winning content and building successful careers.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              { src: "/images/students/student-equipment-1.png", alt: "Student working with professional camera equipment" },
+              { src: "/images/students/student-equipment-2.png", alt: "Music production student in studio" },
+              { src: "/images/students/student-equipment-3.png", alt: "Animation student with graphics tablet" },
+              { src: "/images/students/student-equipment-4.png", alt: "Film students collaborating on set" },
+            ].map((img, idx) => (
+              <div key={idx} className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover"
+                  unoptimized
+                />
               </div>
             ))}
           </div>

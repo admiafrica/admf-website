@@ -91,6 +91,7 @@ export default function GetInvolvedPage() {
         subtitle="Whether you give financially, partner with us, volunteer your time, or donate equipment, you're helping an aspiring creative reach their potential."
         primaryCta={{ label: "Donate Now", href: "#donate" }}
         secondaryCta={{ label: "Partner With Us", href: "#partnerships" }}
+        backgroundImage="/images/heroes/hero-get-involved.png"
       />
 
       {/* Donate */}

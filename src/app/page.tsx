@@ -76,6 +76,7 @@ export default function HomePage() {
         subtitle="We provide scholarships, mentorship, and equipment grants to empower the next generation of African storytellers, filmmakers, musicians, and game developers."
         primaryCta={{ label: "Donate Now", href: "/get-involved" }}
         secondaryCta={{ label: "Our Impact", href: "/impact" }}
+        backgroundImage="/images/heroes/hero-main.png"
       />
 
       {/* Impact Numbers */}
