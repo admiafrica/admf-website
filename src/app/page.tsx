@@ -1,65 +1,140 @@
-import Image from "next/image";
+import { HeroSection } from "@/components/HeroSection";
+import { StatsBar } from "@/components/StatsBar";
+import { ProgrammeCard } from "@/components/ProgrammeCard";
+import { TestimonialCard } from "@/components/TestimonialCard";
+import { PartnerLogos } from "@/components/PartnerLogos";
+import { CTASection } from "@/components/CTASection";
 
-export default function Home() {
+const stats = [
+  { value: "500+", label: "Scholarships Awarded" },
+  { value: "1,200+", label: "Students Supported" },
+  { value: "92%", label: "Graduation Rate" },
+  { value: "14", label: "African Countries" },
+];
+
+const programmes = [
+  {
+    icon: "\uD83C\uDF93",
+    badge: "Scholarships",
+    title: "Full & Partial Scholarships",
+    description:
+      "Merit and need-based scholarships for aspiring creatives to study film, animation, music production, and game development at ADMI.",
+    href: "/programmes#scholarships",
+  },
+  {
+    icon: "\uD83E\uDD1D",
+    badge: "Mentorship",
+    title: "Industry Mentorship Programme",
+    description:
+      "Connecting students with seasoned professionals in the creative industries for guidance, portfolio reviews, and career support.",
+    href: "/programmes#mentorship",
+  },
+  {
+    icon: "\uD83C\uDFAC",
+    badge: "Equipment Grants",
+    title: "Equipment & Studio Grants",
+    description:
+      "Providing production equipment, software licences, and studio access to students who need resources to bring their creative vision to life.",
+    href: "/programmes#equipment-grants",
+  },
+];
+
+const testimonials = [
+  {
+    quote:
+      "The ADMI Foundation scholarship changed my life. I went from watching films on my phone in Kibera to directing my own short film that screened at a festival in Berlin.",
+    name: "Grace Akinyi",
+    role: "Film Graduate, 2024",
+    programme: "Full Scholarship Recipient",
+  },
+  {
+    quote:
+      "Without the equipment grant, I would never have been able to produce my first EP. Now I'm working as a sound engineer at a studio in Nairobi.",
+    name: "Samuel Ochieng",
+    role: "Music Production Graduate",
+    programme: "Equipment Grant Recipient",
+  },
+  {
+    quote:
+      "My mentor from the programme helped me understand the business side of animation. I now run a small studio with three employees.",
+    name: "Amara Njeri",
+    role: "Animation Graduate, 2023",
+    programme: "Mentorship Programme",
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      {/* Hero */}
+      <HeroSection
+        label="ADMI Foundation"
+        title="Investing in Africa's Creative Talent"
+        subtitle="We provide scholarships, mentorship, and equipment grants to empower the next generation of African storytellers, filmmakers, musicians, and game developers."
+        primaryCta={{ label: "Donate Now", href: "/get-involved" }}
+        secondaryCta={{ label: "Our Impact", href: "/impact" }}
+      />
+
+      {/* Impact Numbers */}
+      <StatsBar stats={stats} />
+
+      {/* Our Programmes */}
+      <section className="bg-white section-padding">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <span className="section-label section-label-light">
+              What We Do
+            </span>
+            <h2 className="section-heading section-heading-light mb-4">
+              Our Programmes
+            </h2>
+            <p className="section-subheading section-subheading-light max-w-2xl mx-auto">
+              Three pathways to support talented creatives who lack the resources
+              to pursue their dreams.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {programmes.map((programme) => (
+              <ProgrammeCard key={programme.title} {...programme} />
+            ))}
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Student Stories */}
+      <section className="bg-warm section-padding">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <span className="section-label section-label-light">
+              Student Stories
+            </span>
+            <h2 className="section-heading section-heading-light mb-4">
+              Lives Transformed
+            </h2>
+            <p className="section-subheading section-subheading-light max-w-2xl mx-auto">
+              Hear from the students whose careers were made possible by the
+              generosity of our donors and partners.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {testimonials.map((testimonial) => (
+              <TestimonialCard key={testimonial.name} {...testimonial} />
+            ))}
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Partners */}
+      <PartnerLogos />
+
+      {/* CTA */}
+      <CTASection
+        label="Get Involved"
+        title="Help Us Shape Africa's Creative Future"
+        subtitle="Whether you donate, partner with us, or volunteer your time, every contribution helps an aspiring creative get closer to their dreams."
+        primaryCta={{ label: "Donate Now", href: "/get-involved" }}
+        secondaryCta={{ label: "Partner With Us", href: "/get-involved#partnerships" }}
+      />
+    </>
   );
 }
