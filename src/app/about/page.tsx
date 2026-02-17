@@ -22,25 +22,25 @@ const leadership = [
     name: "Dr. Margaret Wanjiku",
     role: "Executive Director",
     bio: "Former UNESCO creative economy adviser with 15 years of experience in African education policy and cultural development.",
-    imageUrl: "https://placehold.co/160x160/8EBFB0/002A23?text=MW",
+    imageUrl: "/images/team/member-1.png",
   },
   {
     name: "James Karanja",
     role: "Director of Programmes",
     bio: "ADMI co-founder and creative industries veteran who has mentored over 200 emerging African creatives.",
-    imageUrl: "https://placehold.co/160x160/8EBFB0/002A23?text=JK",
+    imageUrl: "/images/team/member-2.png",
   },
   {
     name: "Fatima Hassan",
     role: "Head of Partnerships",
     bio: "Previously at Mastercard Foundation, Fatima brings deep expertise in philanthropic strategy and donor relations across East Africa.",
-    imageUrl: "https://placehold.co/160x160/8EBFB0/002A23?text=FH",
+    imageUrl: "/images/team/member-3.png",
   },
   {
     name: "David Omondi",
     role: "Head of Student Success",
     bio: "An ADMI alumnus himself, David ensures every scholarship recipient gets the support they need to thrive.",
-    imageUrl: "https://placehold.co/160x160/8EBFB0/002A23?text=DO",
+    imageUrl: "/images/team/member-4.png",
   },
 ];
 

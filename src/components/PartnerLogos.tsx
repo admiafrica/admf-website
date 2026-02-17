@@ -1,12 +1,12 @@
 import Image from 'next/image';
 
 const partners = [
-  { name: "Safaricom Foundation", logo: "https://placehold.co/160x60/e5e7eb/6b7280?text=Safaricom" },
-  { name: "Mastercard Foundation", logo: "https://placehold.co/160x60/e5e7eb/6b7280?text=Mastercard" },
-  { name: "USAID", logo: "https://placehold.co/160x60/e5e7eb/6b7280?text=USAID" },
-  { name: "British Council", logo: "https://placehold.co/160x60/e5e7eb/6b7280?text=British+Council" },
-  { name: "Google.org", logo: "https://placehold.co/160x60/e5e7eb/6b7280?text=Google.org" },
-  { name: "UNESCO", logo: "https://placehold.co/160x60/e5e7eb/6b7280?text=UNESCO" },
+  { name: "Safaricom Foundation", logo: "/images/partners/partner-1.png" },
+  { name: "Mastercard Foundation", logo: "/images/partners/partner-2.png" },
+  { name: "USAID", logo: "/images/partners/partner-3.png" },
+  { name: "British Council", logo: "/images/partners/partner-4.png" },
+  { name: "Google.org", logo: "/images/partners/partner-5.png" },
+  { name: "UNESCO", logo: "/images/partners/partner-6.png" },
 ];
 
 export function PartnerLogos() {

@@ -46,7 +46,7 @@ const testimonials = [
     name: "Grace Akinyi",
     role: "Film Graduate, 2024",
     programme: "Full Scholarship Recipient",
-    imageUrl: "https://placehold.co/80x80/8EBFB0/002A23?text=GA",
+    imageUrl: "/images/students/student-1.png",
   },
   {
     quote:
@@ -54,7 +54,7 @@ const testimonials = [
     name: "Samuel Ochieng",
     role: "Music Production Graduate",
     programme: "Equipment Grant Recipient",
-    imageUrl: "https://placehold.co/80x80/8EBFB0/002A23?text=SO",
+    imageUrl: "/images/students/student-2.png",
   },
   {
     quote:
@@ -62,7 +62,7 @@ const testimonials = [
     name: "Amara Njeri",
     role: "Animation Graduate, 2023",
     programme: "Mentorship Programme",
-    imageUrl: "https://placehold.co/80x80/8EBFB0/002A23?text=AN",
+    imageUrl: "/images/students/student-3.png",
   },
 ];
 

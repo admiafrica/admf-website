@@ -23,7 +23,7 @@ const stories = [
     location: "Nairobi, Kenya",
     programme: "Full Scholarship \u2013 Film Production",
     year: "2022\u20132024",
-    imageUrl: "https://placehold.co/300x300/8EBFB0/002A23?text=Grace+A",
+    imageUrl: "/images/students/student-1.png",
     before:
       "Grace grew up in Kibera, Nairobi\u2019s largest informal settlement. She taught herself filmmaking by watching tutorials on a borrowed phone and shot her first short film on a KSh 500 budget.",
     after:
@@ -36,7 +36,7 @@ const stories = [
     location: "Kisumu, Kenya",
     programme: "Equipment Grant \u2013 Music Production",
     year: "2023\u20132025",
-    imageUrl: "https://placehold.co/300x300/8EBFB0/002A23?text=Samuel+O",
+    imageUrl: "/images/students/student-2.png",
     before:
       "Samuel had been producing beats on a cracked version of FL Studio on a shared family computer. He had undeniable talent but no access to professional tools or training.",
     after:
@@ -49,7 +49,7 @@ const stories = [
     location: "Mombasa, Kenya",
     programme: "Mentorship Programme \u2013 Animation",
     year: "2021\u20132023",
-    imageUrl: "https://placehold.co/300x300/8EBFB0/002A23?text=Amara+N",
+    imageUrl: "/images/students/student-3.png",
     before:
       "Amara was a self-taught animator creating short clips on her laptop. She had strong technical skills but no understanding of the business side of the industry or how to find clients.",
     after:
@@ -62,7 +62,7 @@ const stories = [
     location: "Accra, Ghana",
     programme: "Partial Scholarship (75%) \u2013 Game Development",
     year: "2023\u20132025",
-    imageUrl: "https://placehold.co/300x300/8EBFB0/002A23?text=Kofi+M",
+    imageUrl: "/images/students/student-4.png",
     before:
       "Kofi was building simple mobile games in his bedroom in Accra, inspired by stories from Ghanaian folklore. He applied to ADMI but couldn\u2019t afford the full tuition.",
     after:
