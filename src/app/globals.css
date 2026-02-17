@@ -124,7 +124,7 @@ a {
   color: var(--primary);
 }
 .section-label-dark {
-  color: var(--accent);
+  color: var(--secondary);
 }
 
 /* Section heading */
@@ -199,18 +199,18 @@ a {
   border: none;
 }
 .btn-primary {
-  background-color: var(--primary);
-  color: #002A23;
-}
-.btn-primary:hover {
-  background-color: var(--primary-hover);
-}
-.btn-secondary {
   background-color: var(--secondary);
   color: #ffffff;
 }
+.btn-primary:hover {
+  background-color: var(--brand-maroon);
+}
+.btn-secondary {
+  background-color: var(--primary);
+  color: #002A23;
+}
 .btn-secondary:hover {
-  opacity: 0.9;
+  background-color: var(--primary-hover);
 }
 .btn-outline {
   background: transparent;
