@@ -81,7 +81,7 @@ export default function ProgrammesPage() {
         subtitle="Whether you need funding, guidance, or tools, ADMI Foundation has a programme to support your journey into the creative industries."
         primaryCta={{ label: "Apply Now", href: "/contact" }}
         secondaryCta={{ label: "Check Eligibility", href: "#scholarships" }}
-        backgroundImage="/images/heroes/hero-programmes.png"
+        heroImage="/images/students/hero-programmes.png"
       />
 
       {/* Scholarships */}

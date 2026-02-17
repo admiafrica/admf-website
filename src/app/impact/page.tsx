@@ -81,7 +81,7 @@ export default function ImpactPage() {
         subtitle="Every scholarship, mentorship match, and equipment grant represents a life changed and a creative career launched. Here are some of the people behind the numbers."
         primaryCta={{ label: "Donate Now", href: "/get-involved" }}
         secondaryCta={{ label: "Our Programmes", href: "/programmes" }}
-        backgroundImage="/images/heroes/hero-impact.png"
+        heroImage="/images/heroes/hero-impact.png"
       />
 
       <StatsBar stats={impactStats} />

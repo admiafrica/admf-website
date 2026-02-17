@@ -64,8 +64,36 @@ export default function AboutPage() {
         subtitle="ADMI Foundation is the philanthropic arm of the Africa Digital Media Institute, dedicated to removing financial barriers for talented young creatives across the continent."
         primaryCta={{ label: "Our Programmes", href: "/programmes" }}
         secondaryCta={{ label: "Get Involved", href: "/get-involved" }}
-        backgroundImage="/images/heroes/hero-about.png"
+        heroImage="/images/heroes/hero-about.png"
       />
+
+      {/* Featured Image Section */}
+      <section className="bg-gray-50 section-padding">
+        <div className="section-container">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="relative h-[400px] rounded-lg overflow-hidden">
+              <Image
+                src="/images/heroes/Hero-animation.png"
+                alt="ADMI Foundation students in action"
+                fill
+                className="object-cover"
+                unoptimized
+              />
+            </div>
+            <div>
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                Breaking Down Barriers to Creative Education
+              </h3>
+              <p className="text-muted leading-relaxed mb-4">
+                Since our founding, ADMI Foundation has been committed to ensuring that financial circumstances never stand in the way of creative talent.
+              </p>
+              <p className="text-muted leading-relaxed">
+                We work directly with students, families, and communities across Africa to identify and support the next generation of filmmakers, animators, musicians, and game developers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <StatsBar stats={stats} />
 

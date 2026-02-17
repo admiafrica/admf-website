@@ -8,7 +8,7 @@ interface HeroSectionProps {
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
   dark?: boolean;
-  backgroundImage?: string;
+  heroImage?: string;
 }
 
 export function HeroSection({
@@ -18,44 +18,45 @@ export function HeroSection({
   primaryCta,
   secondaryCta,
   dark = true,
-  backgroundImage,
+  heroImage,
 }: HeroSectionProps) {
   return (
     <section
-      className={`${dark ? "bg-admf-green" : "bg-white"} relative overflow-hidden`}
+      className={`${dark ? "bg-admf-green" : "bg-white"} relative overflow-hidden min-h-[500px]`}
       style={{ paddingTop: 72 }}
     >
-      {backgroundImage && (
+      {heroImage && (
         <>
           <div className="absolute inset-0 z-0">
             <Image
-              src={backgroundImage}
+              src={heroImage}
               alt=""
               fill
-              className="object-cover opacity-20"
+              className="object-cover object-right"
               unoptimized
+              priority
             />
           </div>
-          <div className="absolute inset-0 z-0 bg-gradient-to-r from-admf-green/90 to-admf-green/70" />
+          <div className="absolute inset-0 z-[5] bg-gradient-to-r from-admf-green from-30% via-admf-green/70 via-50% to-transparent to-65%" />
         </>
       )}
       <div className="section-container py-20 md:py-32 relative z-10">
         <div className="max-w-3xl">
           {label && (
-            <span className={`section-label ${dark ? "section-label-dark" : "section-label-light"}`}>
+            <span className={`section-label ${dark || heroImage ? "section-label-dark" : "section-label-light"}`}>
               {label}
             </span>
           )}
           <h1
             className={`text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6 ${
-              dark ? "text-white" : "text-foreground"
+              dark || heroImage ? "text-white" : "text-foreground"
             }`}
           >
             {title}
           </h1>
           <p
-            className={`text-lg md:text-xl leading-relaxed mb-10 max-w-2xl ${
-              dark ? "text-white/70" : "text-muted"
+            className={`text-lg md:text-xl leading-relaxed mb-10 ${
+              dark || heroImage ? "text-white" : "text-muted"
             }`}
           >
             {subtitle}
@@ -70,7 +71,7 @@ export function HeroSection({
               {secondaryCta && (
                 <Link
                   href={secondaryCta.href}
-                  className={`btn ${dark ? "btn-outline-dark" : "btn-outline"}`}
+                  className={`btn ${dark || heroImage ? "btn-outline-dark" : "btn-outline"}`}
                 >
                   {secondaryCta.label}
                 </Link>
