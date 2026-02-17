@@ -31,6 +31,14 @@ export const metadata: Metadata = {
   description:
     "ADMI Foundation provides scholarships, mentorship, and equipment grants to empower the next generation of African creatives in film, animation, music, and game development.",
   metadataBase: new URL("https://admf.africa"),
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_GB",
