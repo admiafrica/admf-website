@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from 'next/image';
 import { HeroSection } from "@/components/HeroSection";
 import { StatsBar } from "@/components/StatsBar";
 import { CTASection } from "@/components/CTASection";
@@ -21,21 +22,25 @@ const leadership = [
     name: "Dr. Margaret Wanjiku",
     role: "Executive Director",
     bio: "Former UNESCO creative economy adviser with 15 years of experience in African education policy and cultural development.",
+    imageUrl: "https://placehold.co/160x160/8EBFB0/002A23?text=MW",
   },
   {
     name: "James Karanja",
     role: "Director of Programmes",
     bio: "ADMI co-founder and creative industries veteran who has mentored over 200 emerging African creatives.",
+    imageUrl: "https://placehold.co/160x160/8EBFB0/002A23?text=JK",
   },
   {
     name: "Fatima Hassan",
     role: "Head of Partnerships",
     bio: "Previously at Mastercard Foundation, Fatima brings deep expertise in philanthropic strategy and donor relations across East Africa.",
+    imageUrl: "https://placehold.co/160x160/8EBFB0/002A23?text=FH",
   },
   {
     name: "David Omondi",
     role: "Head of Student Success",
     bio: "An ADMI alumnus himself, David ensures every scholarship recipient gets the support they need to thrive.",
+    imageUrl: "https://placehold.co/160x160/8EBFB0/002A23?text=DO",
   },
 ];
 
@@ -146,13 +151,14 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {leadership.map((person) => (
               <div key={person.name} className="card-light p-6 text-center">
-                <div className="w-20 h-20 rounded-full bg-primary/10 mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-primary font-bold text-xl">
-                    {person.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")}
-                  </span>
+                <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4">
+                  <Image
+                    src={person.imageUrl}
+                    alt={person.name}
+                    width={80}
+                    height={80}
+                    className="object-cover"
+                  />
                 </div>
                 <h3 className="font-bold text-foreground mb-1">{person.name}</h3>
                 <p className="text-primary text-sm font-medium mb-3">

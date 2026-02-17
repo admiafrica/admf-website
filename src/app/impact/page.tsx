@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from 'next/image';
 import { HeroSection } from "@/components/HeroSection";
 import { StatsBar } from "@/components/StatsBar";
 import { CTASection } from "@/components/CTASection";
@@ -22,6 +23,7 @@ const stories = [
     location: "Nairobi, Kenya",
     programme: "Full Scholarship \u2013 Film Production",
     year: "2022\u20132024",
+    imageUrl: "https://placehold.co/300x300/8EBFB0/002A23?text=Grace+A",
     before:
       "Grace grew up in Kibera, Nairobi\u2019s largest informal settlement. She taught herself filmmaking by watching tutorials on a borrowed phone and shot her first short film on a KSh 500 budget.",
     after:
@@ -34,6 +36,7 @@ const stories = [
     location: "Kisumu, Kenya",
     programme: "Equipment Grant \u2013 Music Production",
     year: "2023\u20132025",
+    imageUrl: "https://placehold.co/300x300/8EBFB0/002A23?text=Samuel+O",
     before:
       "Samuel had been producing beats on a cracked version of FL Studio on a shared family computer. He had undeniable talent but no access to professional tools or training.",
     after:
@@ -46,6 +49,7 @@ const stories = [
     location: "Mombasa, Kenya",
     programme: "Mentorship Programme \u2013 Animation",
     year: "2021\u20132023",
+    imageUrl: "https://placehold.co/300x300/8EBFB0/002A23?text=Amara+N",
     before:
       "Amara was a self-taught animator creating short clips on her laptop. She had strong technical skills but no understanding of the business side of the industry or how to find clients.",
     after:
@@ -58,6 +62,7 @@ const stories = [
     location: "Accra, Ghana",
     programme: "Partial Scholarship (75%) \u2013 Game Development",
     year: "2023\u20132025",
+    imageUrl: "https://placehold.co/300x300/8EBFB0/002A23?text=Kofi+M",
     before:
       "Kofi was building simple mobile games in his bedroom in Accra, inspired by stories from Ghanaian folklore. He applied to ADMI but couldn\u2019t afford the full tuition.",
     after:
@@ -96,38 +101,49 @@ export default function ImpactPage() {
           <div className="space-y-8">
             {stories.map((story) => (
               <div key={story.name} className="card-light overflow-hidden">
-                <div className="p-6 md:p-10">
-                  <div className="flex flex-wrap items-center gap-3 mb-4">
-                    <span className="badge badge-teal">{story.programme}</span>
-                    <span className="text-muted text-sm">{story.year}</span>
+                <div className="md:flex md:gap-8">
+                  <div className="md:w-64 md:flex-shrink-0">
+                    <Image
+                      src={story.imageUrl}
+                      alt={story.name}
+                      width={300}
+                      height={300}
+                      className="w-full h-64 md:h-full object-cover"
+                    />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-1">
-                    {story.name}
-                  </h3>
-                  <p className="text-muted text-sm mb-6">{story.location}</p>
+                  <div className="p-6 md:p-10 md:py-8">
+                    <div className="flex flex-wrap items-center gap-3 mb-4">
+                      <span className="badge badge-teal">{story.programme}</span>
+                      <span className="text-muted text-sm">{story.year}</span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-foreground mb-1">
+                      {story.name}
+                    </h3>
+                    <p className="text-muted text-sm mb-6">{story.location}</p>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                      <h4 className="font-bold text-sm text-foreground mb-2 uppercase tracking-wide">
-                        Before
-                      </h4>
-                      <p className="text-muted text-sm leading-relaxed">
-                        {story.before}
-                      </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                      <div>
+                        <h4 className="font-bold text-sm text-foreground mb-2 uppercase tracking-wide">
+                          Before
+                        </h4>
+                        <p className="text-muted text-sm leading-relaxed">
+                          {story.before}
+                        </p>
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-sm text-primary mb-2 uppercase tracking-wide">
+                          After
+                        </h4>
+                        <p className="text-muted text-sm leading-relaxed">
+                          {story.after}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-bold text-sm text-primary mb-2 uppercase tracking-wide">
-                        After
-                      </h4>
-                      <p className="text-muted text-sm leading-relaxed">
-                        {story.after}
-                      </p>
-                    </div>
+
+                    <blockquote className="border-l-4 border-primary pl-4 italic text-foreground">
+                      &ldquo;{story.quote}&rdquo;
+                    </blockquote>
                   </div>
-
-                  <blockquote className="border-l-4 border-primary pl-4 italic text-foreground">
-                    &ldquo;{story.quote}&rdquo;
-                  </blockquote>
                 </div>
               </div>
             ))}

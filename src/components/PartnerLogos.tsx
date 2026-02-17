@@ -1,10 +1,12 @@
+import Image from 'next/image';
+
 const partners = [
-  "Safaricom Foundation",
-  "Mastercard Foundation",
-  "USAID",
-  "British Council",
-  "Google.org",
-  "UNESCO",
+  { name: "Safaricom Foundation", logo: "https://placehold.co/160x60/e5e7eb/6b7280?text=Safaricom" },
+  { name: "Mastercard Foundation", logo: "https://placehold.co/160x60/e5e7eb/6b7280?text=Mastercard" },
+  { name: "USAID", logo: "https://placehold.co/160x60/e5e7eb/6b7280?text=USAID" },
+  { name: "British Council", logo: "https://placehold.co/160x60/e5e7eb/6b7280?text=British+Council" },
+  { name: "Google.org", logo: "https://placehold.co/160x60/e5e7eb/6b7280?text=Google.org" },
+  { name: "UNESCO", logo: "https://placehold.co/160x60/e5e7eb/6b7280?text=UNESCO" },
 ];
 
 export function PartnerLogos() {
@@ -20,12 +22,16 @@ export function PartnerLogos() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
           {partners.map((partner) => (
             <div
-              key={partner}
-              className="flex items-center justify-center h-20 rounded-lg bg-warm px-4"
+              key={partner.name}
+              className="flex items-center justify-center h-20 rounded-lg bg-warm px-4 relative"
             >
-              <span className="text-muted font-medium text-sm text-center">
-                {partner}
-              </span>
+              <Image
+                src={partner.logo}
+                alt={partner.name}
+                width={160}
+                height={60}
+                className="object-contain max-w-full max-h-full"
+              />
             </div>
           ))}
         </div>
