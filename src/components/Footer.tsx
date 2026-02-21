@@ -18,7 +18,7 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Image
-                src="/logos/generated-1771332403636.png"
+                src="/logos/admf-logo-cropped.png"
                 alt="ADMI Foundation"
                 width={32}
                 height={32}

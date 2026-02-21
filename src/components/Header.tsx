@@ -57,7 +57,7 @@ export function Header() {
             className="flex items-center gap-2"
           >
             <Image
-              src="/logos/generated-1771332403636.png"
+              src="/logos/admf-logo-cropped.png"
               alt="ADMI Foundation"
               width={32}
               height={32}
@@ -79,10 +79,10 @@ export function Header() {
                   handleNavClick(item.href);
                 }}
                 className={cn(
-                  "px-3 py-2 rounded-md text-sm font-medium transition-colors",
+                  "px-3 py-2 text-sm font-medium transition-colors relative",
                   activeSection === item.href
-                    ? "text-primary bg-primary/5"
-                    : "text-muted hover:text-foreground hover:bg-gray-50"
+                    ? "text-foreground after:absolute after:bottom-0 after:left-3 after:right-3 after:h-0.5 after:bg-primary after:rounded-full"
+                    : "text-muted hover:text-foreground"
                 )}
               >
                 {item.label}
@@ -138,10 +138,10 @@ export function Header() {
                   handleNavClick(item.href);
                 }}
                 className={cn(
-                  "px-3 py-3 rounded-md text-base font-medium transition-colors",
+                  "px-3 py-3 text-base font-medium transition-colors border-l-2",
                   activeSection === item.href
-                    ? "text-primary bg-primary/5"
-                    : "text-muted hover:text-foreground"
+                    ? "text-foreground border-primary"
+                    : "text-muted hover:text-foreground border-transparent"
                 )}
               >
                 {item.label}
