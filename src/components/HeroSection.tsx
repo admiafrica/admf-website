@@ -9,6 +9,7 @@ interface HeroSectionProps {
   secondaryCta?: { label: string; href: string };
   dark?: boolean;
   heroImage?: string;
+  showBadge?: boolean;
 }
 
 export function HeroSection({
@@ -19,6 +20,7 @@ export function HeroSection({
   secondaryCta,
   dark = true,
   heroImage,
+  showBadge,
 }: HeroSectionProps) {
   return (
     <section
@@ -61,23 +63,28 @@ export function HeroSection({
           >
             {subtitle}
           </p>
-          {(primaryCta || secondaryCta) && (
-            <div className="flex flex-wrap gap-4">
-              {primaryCta && (
-                <Link href={primaryCta.href} className="btn btn-primary">
-                  {primaryCta.label}
-                </Link>
-              )}
-              {secondaryCta && (
-                <Link
-                  href={secondaryCta.href}
-                  className={`btn ${dark || heroImage ? "btn-outline-dark" : "btn-outline"}`}
-                >
-                  {secondaryCta.label}
-                </Link>
-              )}
-            </div>
-          )}
+
+          <div className="flex flex-wrap items-center gap-4">
+            {primaryCta && (
+              <a href={primaryCta.href} className="btn btn-primary">
+                {primaryCta.label}
+              </a>
+            )}
+            {secondaryCta && (
+              <Link
+                href={secondaryCta.href}
+                className={`btn ${dark || heroImage ? "btn-outline-dark" : "btn-outline"}`}
+              >
+                {secondaryCta.label}
+              </Link>
+            )}
+            {showBadge && (
+              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg px-4 py-2">
+                <span className="text-accent font-bold text-sm">Top 100 MSME</span>
+                <span className="text-white/70 text-xs">Digital Transformation 2022</span>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>
