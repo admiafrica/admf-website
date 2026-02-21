@@ -17,20 +17,21 @@ const stats = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero / Intro */}
-      <HeroSection
-        label="ADMI Foundation"
-        title="We're empowering the next generation of African storytellers, filmmakers, musicians, and game developers."
-        subtitle="We provide scholarships, mentorship, and equipment grants to empower the next generation of African creators to build SDG-aligned solutions."
-        primaryCta={{ label: "Donate Now", href: "#partner" }}
-        heroImage="/images/heroes/hero-postproduction.png"
-        showBadge
-      />
+      {/* Hero + Stats fill the viewport */}
+      <div className="min-h-screen flex flex-col">
+        <HeroSection
+          title="Empowering Africa's next generation of creative talent."
+          subtitle="Through scholarships, mentorship, and equipment grants, we support storytellers, filmmakers, musicians, and game developers building SDG-aligned solutions."
+          primaryCta={{ label: "Donate Now", href: "#partner" }}
+          heroImage="/images/heroes/hero-postproduction.png"
+          showBadge
+        />
 
-      {/* Impact at a Glance */}
-      <section id="impact">
-        <StatsBar stats={stats} />
-      </section>
+        {/* Impact at a Glance */}
+        <section id="impact">
+          <StatsBar stats={stats} />
+        </section>
+      </div>
 
       {/* Our Programs */}
       <ProgramsGrid />

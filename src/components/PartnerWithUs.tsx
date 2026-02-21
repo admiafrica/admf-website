@@ -3,7 +3,7 @@ export function PartnerWithUs() {
     <section id="partner" className="bg-admf-green section-padding">
       <div className="section-container">
         <div className="max-w-3xl mx-auto">
-          <div className="bg-white/5 border border-white/10 rounded-xl p-8 md:p-12 text-center">
+          <div className="bg-white/10 border border-white/15 rounded-xl p-8 md:p-12 text-center">
             <span className="section-label section-label-dark">
               Get Involved
             </span>

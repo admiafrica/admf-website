@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -55,9 +56,13 @@ export function Header() {
             }}
             className="flex items-center gap-2"
           >
-            <div className="w-8 h-8 rounded-md bg-primary flex items-center justify-center">
-              <span className="text-white font-bold text-sm">AF</span>
-            </div>
+            <Image
+              src="/logos/generated-1771332403636.png"
+              alt="ADMI Foundation"
+              width={32}
+              height={32}
+              className="rounded-md"
+            />
             <span className="font-bold text-lg text-foreground tracking-tight">
               ADMI Foundation
             </span>

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const sectionLinks = [
   { label: "Impact", href: "#impact" },
   { label: "Programs", href: "#programs" },
@@ -9,15 +11,19 @@ const sectionLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-admf-green text-white">
+    <footer className="bg-admf-green-deep text-white">
       <div className="section-container py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-md bg-primary flex items-center justify-center">
-                <span className="text-white font-bold text-sm">AF</span>
-              </div>
+              <Image
+                src="/logos/generated-1771332403636.png"
+                alt="ADMI Foundation"
+                width={32}
+                height={32}
+                className="rounded-md"
+              />
               <span className="font-bold text-lg tracking-tight">
                 ADMI Foundation
               </span>
