@@ -1,24 +1,17 @@
-import Link from "next/link";
-
-const quickLinks = [
-  { label: "About", href: "/about" },
-  { label: "Programmes", href: "/programmes" },
-  { label: "Impact Stories", href: "/impact" },
-  { label: "Get Involved", href: "/get-involved" },
-  { label: "Contact", href: "/contact" },
-];
-
-const programmes = [
-  { label: "Scholarships", href: "/programmes#scholarships" },
-  { label: "Mentorship", href: "/programmes#mentorship" },
-  { label: "Equipment Grants", href: "/programmes#equipment-grants" },
+const sectionLinks = [
+  { label: "Impact", href: "#impact" },
+  { label: "Programs", href: "#programs" },
+  { label: "Success Stories", href: "#stories" },
+  { label: "Partners", href: "#partners" },
+  { label: "Reports", href: "#reports" },
+  { label: "Team", href: "#team" },
 ];
 
 export function Footer() {
   return (
     <footer className="bg-admf-green text-white">
       <div className="section-container py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -43,45 +36,26 @@ export function Footer() {
             </a>
           </div>
 
-          {/* Quick Links */}
+          {/* Section Links */}
           <div>
             <h4 className="font-bold text-sm uppercase tracking-wider mb-4 text-white/80">
-              Quick Links
+              Sections
             </h4>
             <ul className="space-y-3">
-              {quickLinks.map((link) => (
+              {sectionLinks.map((link) => (
                 <li key={link.href}>
-                  <Link
+                  <a
                     href={link.href}
                     className="text-white/60 text-sm hover:text-primary transition-colors"
                   >
                     {link.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Programmes */}
-          <div>
-            <h4 className="font-bold text-sm uppercase tracking-wider mb-4 text-white/80">
-              Programmes
-            </h4>
-            <ul className="space-y-3">
-              {programmes.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-white/60 text-sm hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
+          {/* Get in Touch */}
           <div>
             <h4 className="font-bold text-sm uppercase tracking-wider mb-4 text-white/80">
               Get in Touch
@@ -89,13 +63,12 @@ export function Footer() {
             <ul className="space-y-3 text-white/60 text-sm">
               <li>
                 <a
-                  href="mailto:info@admf.africa"
+                  href="mailto:partnerships@africadigitalmedia.org"
                   className="hover:text-primary transition-colors"
                 >
-                  info@admf.africa
+                  partnerships@africadigitalmedia.org
                 </a>
               </li>
-              <li>Caxton House, Nairobi, Kenya</li>
             </ul>
           </div>
         </div>
@@ -106,18 +79,18 @@ export function Footer() {
             &copy; 2026 ADMI Foundation. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <Link
+            <a
               href="/privacy"
               className="text-white/40 text-sm hover:text-white/60 transition-colors"
             >
               Privacy Policy
-            </Link>
-            <Link
+            </a>
+            <a
               href="/terms"
               className="text-white/40 text-sm hover:text-white/60 transition-colors"
             >
               Terms of Use
-            </Link>
+            </a>
           </div>
         </div>
       </div>

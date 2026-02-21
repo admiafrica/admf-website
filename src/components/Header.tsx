@@ -1,60 +1,95 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Programmes", href: "/programmes" },
-  { label: "Impact", href: "/impact" },
-  { label: "Get Involved", href: "/get-involved" },
-  { label: "Contact", href: "/contact" },
+  { label: "Impact", href: "#impact" },
+  { label: "Programs", href: "#programs" },
+  { label: "Stories", href: "#stories" },
+  { label: "Partners", href: "#partners" },
+  { label: "Reports", href: "#reports" },
+  { label: "Team", href: "#team" },
 ];
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const pathname = usePathname();
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveSection(`#${entry.target.id}`);
+          }
+        }
+      },
+      { rootMargin: "-30% 0px -60% 0px" }
+    );
+
+    const sections = document.querySelectorAll("section[id]");
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
+  const handleNavClick = (href: string) => {
+    setMobileMenuOpen(false);
+    const el = document.querySelector(href);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-divider-light">
       <div className="section-container">
         <div className="flex items-center justify-between h-[72px]">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+            className="flex items-center gap-2"
+          >
             <div className="w-8 h-8 rounded-md bg-primary flex items-center justify-center">
               <span className="text-white font-bold text-sm">AF</span>
             </div>
             <span className="font-bold text-lg text-foreground tracking-tight">
               ADMI Foundation
             </span>
-          </Link>
+          </a>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
-              <Link
+              <a
                 key={item.href}
                 href={item.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick(item.href);
+                }}
                 className={cn(
                   "px-3 py-2 rounded-md text-sm font-medium transition-colors",
-                  pathname === item.href
+                  activeSection === item.href
                     ? "text-primary bg-primary/5"
                     : "text-muted hover:text-foreground hover:bg-gray-50"
                 )}
               >
                 {item.label}
-              </Link>
+              </a>
             ))}
           </nav>
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
-            <Link href="/get-involved" className="btn btn-primary text-sm">
+            <a href="#partner" onClick={(e) => { e.preventDefault(); handleNavClick("#partner"); }} className="btn btn-primary text-sm">
               Donate
-            </Link>
+            </a>
           </div>
 
           {/* Mobile hamburger */}
@@ -90,28 +125,31 @@ export function Header() {
         <div className="md:hidden bg-white border-t border-divider-light">
           <div className="section-container py-4 flex flex-col gap-1">
             {navItems.map((item) => (
-              <Link
+              <a
                 key={item.href}
                 href={item.href}
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick(item.href);
+                }}
                 className={cn(
                   "px-3 py-3 rounded-md text-base font-medium transition-colors",
-                  pathname === item.href
+                  activeSection === item.href
                     ? "text-primary bg-primary/5"
                     : "text-muted hover:text-foreground"
                 )}
               >
                 {item.label}
-              </Link>
+              </a>
             ))}
             <div className="pt-3 border-t border-divider-light mt-2">
-              <Link
-                href="/get-involved"
-                onClick={() => setMobileMenuOpen(false)}
+              <a
+                href="#partner"
+                onClick={(e) => { e.preventDefault(); handleNavClick("#partner"); }}
                 className="btn btn-primary w-full text-center"
               >
                 Donate
-              </Link>
+              </a>
             </div>
           </div>
         </div>
