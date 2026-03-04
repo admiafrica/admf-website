@@ -24,7 +24,7 @@ export function HeroSection({
 }: HeroSectionProps) {
   return (
     <section
-      className={`${dark ? "bg-admf-green" : "bg-white"} relative overflow-hidden flex-1 flex flex-col ${heroImage ? "min-h-[420px] md:min-h-0" : ""}`}
+      className={`${dark ? "bg-admf-green" : "bg-white"} relative overflow-hidden flex-1 flex flex-col ${heroImage ? "min-h-[480px] md:min-h-0" : ""}`}
       style={{ paddingTop: 72 }}
     >
       {heroImage && (
@@ -34,7 +34,7 @@ export function HeroSection({
               src={heroImage}
               alt=""
               fill
-              className="object-cover object-[75%_center] md:object-right"
+              className="object-cover object-[60%_20%] md:object-right"
               unoptimized
               priority
             />
