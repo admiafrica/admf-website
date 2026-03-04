@@ -6,7 +6,7 @@ const stories = [
     headline: "From Nairobi to the World",
     quote:
       "A graduate working internationally, proving that ADMI's training meets global standards and that greater exposure to international markets could transform outcomes for more graduates.",
-    imageUrl: "/images/students/student-1.png",
+    imageUrl: "/images/students/student-group-1.jpg",
   },
   {
     tag: "The Refugee Creator",
@@ -14,7 +14,7 @@ const stories = [
       "From the camp to the camera",
     quote:
       "How a graduate transitioned from a 7-week film course to producing professional content. 71% of alumni find work through ADMI's network.",
-    imageUrl: "/images/students/student-2.png",
+    imageUrl: "/images/students/student-group-2.jpg",
   },
   {
     tag: "Women in Tech",
@@ -22,7 +22,7 @@ const stories = [
       "Breaking the Screen",
     quote:
       "How a woman who had never used a professional camera now earns a living in the digital economy. Ganjisha reached 3,934 women.",
-    imageUrl: "/images/students/student-3.png",
+    imageUrl: "/images/students/students-photography-session.jpg",
   },
 ];
 

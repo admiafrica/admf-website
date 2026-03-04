@@ -2,21 +2,21 @@ import Image from "next/image";
 
 const team = [
   {
-    name: "Sila",
-    role: "Community Leader",
-    imageUrl: "/images/team/member-3.png",
+    name: "Carolyne Sila",
+    role: "Head of School",
+    imageUrl: "/images/team/carolyne-sila.jpg",
     linkedin: "#",
   },
   {
-    name: "Gemma",
-    role: "Head of Partnerships",
-    imageUrl: "/images/team/member-4.png",
+    name: "Gemma May-Kimani",
+    role: "Partnerships Manager",
+    imageUrl: "/images/team/gemma-may-kimani.png",
     linkedin: "#",
   },
   {
-    name: "Julie",
-    role: "Title/Role",
-    imageUrl: "/images/partners/member-1.png",
+    name: "Julie Nyambeki",
+    role: "Program Manager",
+    imageUrl: "/images/team/julie-nyambeki.jpeg",
     linkedin: "#",
   },
 ];
