@@ -31,7 +31,7 @@ export function TeamSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {team.map((member) => (
             <div key={member.name} className="text-center">
-              <div className="relative w-48 h-48 mx-auto mb-4 rounded-xl overflow-hidden">
+              <div className="relative w-64 h-64 md:w-48 md:h-48 mx-auto mb-4 rounded-xl overflow-hidden">
                 <Image
                   src={member.imageUrl}
                   alt={member.name}
