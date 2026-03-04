@@ -302,6 +302,16 @@ a {
   background: var(--bg-card-dark);
 }
 
+/* Hero gradient overlay - less coverage on mobile to show more of the image */
+.hero-gradient {
+  background: linear-gradient(to right, #002A23 10%, transparent 40%);
+}
+@media (min-width: 768px) {
+  .hero-gradient {
+    background: linear-gradient(to right, #002A23 25%, transparent 50%);
+  }
+}
+
 /* Utility classes */
 .text-balance {
   text-wrap: balance;
