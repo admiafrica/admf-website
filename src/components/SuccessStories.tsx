@@ -22,7 +22,7 @@ const stories = [
       "Breaking the Screen",
     quote:
       "How a woman who had never used a professional camera now earns a living in the digital economy. Ganjisha reached 3,934 women.",
-    imageUrl: "/images/students/students-photography-session.jpg",
+    imageUrl: "/images/students/student-session.jpg",
   },
 ];
 

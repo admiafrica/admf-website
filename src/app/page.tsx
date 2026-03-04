@@ -23,7 +23,7 @@ export default function HomePage() {
           title="Empowering Africa's next generation of creative talent."
           subtitle="Through scholarships, mentorship, and equipment grants, we support storytellers, filmmakers, musicians, and game developers building SDG-aligned solutions."
           primaryCta={{ label: "Donate Now", href: "#partner" }}
-          heroImage="/images/heroes/hero-postproduction.png"
+          heroImage="/images/students/students-photography-session.jpg"
           showBadge
         />
 
