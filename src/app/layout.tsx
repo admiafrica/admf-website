@@ -65,7 +65,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${proximaNova.variable} ${nexa.variable} antialiased`}>
+      <body className={`${proximaNova.variable} ${nexa.variable} antialiased`} suppressHydrationWarning>
         <Header />
         <main>{children}</main>
         <Footer />

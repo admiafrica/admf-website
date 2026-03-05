@@ -1,54 +1,50 @@
 import Image from "next/image";
 
 const partners = [
-  { name: "Google.org", logo: "/logos/partners/google-org.png", wide: true },
-  { name: "Mastercard Foundation", logo: "/logos/partners/mastercard-foundation.png", wide: true },
-  { name: "Microsoft", logo: "/logos/partners/microsoft.png", wide: true },
-  { name: "Netflix", logo: "/logos/partners/netflix.png", wide: false },
-  { name: "European Union", logo: "/logos/partners/european-union.png", wide: false },
-  { name: "KCB Foundation", logo: "/logos/partners/kcb-foundation.png", wide: true },
-  { name: "GIZ", logo: "/logos/partners/giz.png", wide: false },
-  { name: "AFD", logo: "/logos/partners/afd.png", wide: false },
-  { name: "ICT Authority", logo: "/logos/partners/ict-authority.png", wide: true },
-  { name: "Australian High Commission", logo: "/logos/partners/australian-high-commission.png", wide: false },
-  { name: "Equity Group Foundation", logo: "/logos/partners/equity-group-foundation.png", wide: false },
-  { name: "Challenge Fund", logo: "/logos/partners/challenge-fund.png", wide: false },
-  { name: "French Ambassador", logo: "/logos/partners/french-ambassador.png", wide: false },
-  { name: "M-PESA Foundation", logo: "/logos/partners/mpesa-foundation.png", wide: false },
-  { name: "Warner Music Group", logo: "/logos/partners/warner-music-group.png", wide: false },
-  { name: "Gulli", logo: "/logos/partners/gulli.jpeg", wide: false },
-  { name: "Wadhwani Foundation", logo: "/logos/partners/wadhwani-foundation.png", wide: false },
+  { name: "Google.org", logo: "/logos/partners/google-org.png" },
+  { name: "Mastercard Foundation", logo: "/logos/partners/mastercard-foundation.png" },
+  { name: "Microsoft", logo: "/logos/partners/microsoft.png" },
+  { name: "Netflix", logo: "/logos/partners/netflix.png" },
+  { name: "European Union", logo: "/logos/partners/european-union.png" },
+  { name: "KCB Foundation", logo: "/logos/partners/kcb-foundation.png" },
+  { name: "GIZ", logo: "/logos/partners/giz.png" },
+  { name: "AFD", logo: "/logos/partners/afd.png" },
+  { name: "ICT Authority", logo: "/logos/partners/ict-authority.png" },
+  { name: "Australian High Commission", logo: "/logos/partners/australian-high-commission.png" },
+  { name: "Equity Group Foundation", logo: "/logos/partners/equity-group-foundation.png" },
+  { name: "Challenge Fund", logo: "/logos/partners/challenge-fund.png" },
+  { name: "French Ambassador", logo: "/logos/partners/french-ambassador.png" },
+  { name: "M-PESA Foundation", logo: "/logos/partners/mpesa-foundation.png" },
+  { name: "Warner Music Group", logo: "/logos/partners/warner-music-group.png" },
+  { name: "Gulli", logo: "/logos/partners/gulli.jpeg" },
+  { name: "Wadhwani Foundation", logo: "/logos/partners/wadhwani-foundation.png" },
 ];
 
 export function PartnerLogos() {
   return (
-    <section id="partners" className="bg-admf-green pt-16 pb-8 md:pt-20 md:pb-10">
+    <section id="partners" className="bg-white section-padding">
       <div className="section-container">
         <div className="text-center mb-12">
-          <span className="section-label section-label-dark">
+          <span className="section-label section-label-light">
             Our Partners
           </span>
-          <h2 className="section-heading section-heading-dark">
+          <h2 className="section-heading section-heading-light">
             Supported by Leading Organisations
           </h2>
         </div>
-        <div className="grid grid-cols-4 md:grid-cols-6 gap-3 md:gap-4 items-center mb-10">
+
+        <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-10">
           {partners.map((partner) => (
             <div
               key={partner.name}
-              className={`group flex items-center justify-center rounded-lg bg-white/10 hover:bg-white/20 border border-white/5 hover:border-white/15 px-3 md:px-4 relative transition-all duration-200 ${
-                partner.wide
-                  ? "col-span-2 h-16 md:h-20"
-                  : "col-span-1 h-16 md:h-20"
-              }`}
+              className="group flex items-center justify-center bg-gray-50 rounded-xl border border-gray-100 hover:shadow-md hover:border-gray-200 transition-all duration-200 w-[calc(33.333%-0.5rem)] sm:w-[calc(25%-0.5rem)] md:w-[calc(20%-0.8rem)] lg:w-[calc(16.666%-0.875rem)] aspect-[4/3] p-4 md:p-5"
             >
               <Image
                 src={partner.logo}
                 alt={partner.name}
-                width={partner.wide ? 200 : 120}
-                height={partner.wide ? 50 : 80}
-                className="object-contain max-w-full max-h-[80%] brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity duration-200"
-                unoptimized
+                width={160}
+                height={80}
+                className="object-contain w-full h-full opacity-80 group-hover:opacity-100 transition-opacity duration-200"
               />
             </div>
           ))}
@@ -56,7 +52,7 @@ export function PartnerLogos() {
 
         {/* Academic Prestige Note */}
         <div className="text-center">
-          <p className="text-white/40 text-sm italic">
+          <p className="text-muted text-sm italic">
             Reviewed by Harvard University; Ongoing collaboration with Yale
             Business School.
           </p>

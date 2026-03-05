@@ -29,13 +29,18 @@ export function HeroSection({
     >
       {heroImage && (
         <>
-          <div className="absolute inset-0 z-0">
+          <div
+            className="absolute inset-y-0 right-0 left-0 md:left-[30%] z-0"
+            style={{
+              maskImage: "linear-gradient(to right, transparent 0%, black 20%)",
+              WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 20%)",
+            }}
+          >
             <Image
               src={heroImage}
               alt=""
               fill
-              className="object-cover object-[60%_20%] md:object-right"
-              unoptimized
+              className="object-cover object-center"
               priority
             />
           </div>
@@ -50,7 +55,7 @@ export function HeroSection({
               <span className="text-white/70 text-xs">Digital Transformation 2022</span>
             </div>
           )}
-          <div className={heroImage ? "bg-admf-green/70 backdrop-blur-sm rounded-xl p-6 md:p-8" : ""}>
+          <div>
             {label && (
               <span className={`section-label ${dark || heroImage ? "section-label-dark" : "section-label-light"}`}>
                 {label}
@@ -65,7 +70,7 @@ export function HeroSection({
             </h1>
             <p
               className={`text-lg md:text-xl leading-relaxed mb-8 ${
-                dark || heroImage ? "text-white/90" : "text-muted"
+                dark || heroImage ? "text-white" : "text-muted"
               }`}
             >
               {subtitle}
@@ -73,9 +78,9 @@ export function HeroSection({
 
             <div className="flex flex-wrap items-center gap-4">
               {primaryCta && (
-                <a href={primaryCta.href} className="btn btn-primary">
+                <Link href={primaryCta.href} className="btn btn-primary">
                   {primaryCta.label}
-                </a>
+                </Link>
               )}
               {secondaryCta && (
                 <Link

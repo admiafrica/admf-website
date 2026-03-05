@@ -1,6 +1,6 @@
 export function PartnerWithUs() {
   return (
-    <section id="partner" className="bg-admf-green pt-8 pb-16 md:pt-10 md:pb-20">
+    <section id="partner" className="bg-admf-green section-padding">
       <div className="section-container">
         <div className="max-w-3xl mx-auto">
           <div className="bg-white/10 border border-white/15 rounded-xl p-8 md:p-12 text-center">
@@ -20,7 +20,7 @@ export function PartnerWithUs() {
               href="mailto:partnerships@africadigitalmedia.org"
               className="btn btn-primary"
             >
-              partnerships@africadigitalmedia.org
+              Start a Conversation
             </a>
           </div>
         </div>
