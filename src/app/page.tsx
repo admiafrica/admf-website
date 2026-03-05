@@ -39,16 +39,14 @@ export default function HomePage() {
       {/* Success Stories */}
       <SuccessStories />
 
-      {/* Partners */}
-      <PartnerLogos />
-
       {/* Impact Reports & Lessons Learned */}
       <ImpactReports />
 
       {/* Our Team */}
       <TeamSection />
 
-      {/* Partner With Us */}
+      {/* Partners + Partner With Us (combined flow) */}
+      <PartnerLogos />
       <PartnerWithUs />
     </>
   );

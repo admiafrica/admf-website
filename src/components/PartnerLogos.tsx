@@ -22,13 +22,13 @@ const partners = [
 
 export function PartnerLogos() {
   return (
-    <section id="partners" className="bg-white section-padding">
+    <section id="partners" className="bg-admf-green pt-16 pb-8 md:pt-20 md:pb-10">
       <div className="section-container">
         <div className="text-center mb-12">
-          <span className="section-label section-label-light">
+          <span className="section-label section-label-dark">
             Our Partners
           </span>
-          <h2 className="section-heading section-heading-light">
+          <h2 className="section-heading section-heading-dark">
             Supported by Leading Organisations
           </h2>
         </div>
@@ -36,7 +36,7 @@ export function PartnerLogos() {
           {partners.map((partner) => (
             <div
               key={partner.name}
-              className="flex items-center justify-center h-20 rounded-lg bg-warm px-4 relative"
+              className="group flex items-center justify-center h-20 rounded-lg bg-white/10 hover:bg-white/20 border border-white/5 hover:border-white/15 px-4 relative transition-all duration-200"
             >
               {partner.logo ? (
                 <Image
@@ -44,11 +44,11 @@ export function PartnerLogos() {
                   alt={partner.name}
                   width={160}
                   height={60}
-                  className="object-contain max-w-full max-h-full"
+                  className="object-contain max-w-full max-h-full brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity duration-200"
                   unoptimized
                 />
               ) : (
-                <span className="text-muted text-xs text-center font-medium leading-tight">
+                <span className="text-white/60 text-xs text-center font-medium leading-tight">
                   {partner.name}
                 </span>
               )}
@@ -58,7 +58,7 @@ export function PartnerLogos() {
 
         {/* Academic Prestige Note */}
         <div className="text-center">
-          <p className="text-muted text-sm italic">
+          <p className="text-white/40 text-sm italic">
             Reviewed by Harvard University; Ongoing collaboration with Yale
             Business School.
           </p>
