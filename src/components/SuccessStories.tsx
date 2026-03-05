@@ -42,14 +42,14 @@ export function SuccessStories() {
           {stories.map((story) => (
             <div
               key={story.tag}
-              className="card-light overflow-hidden flex flex-col"
+              className="card-light overflow-hidden flex flex-col hover:shadow-lg hover:-translate-y-1 transition-all duration-200 group"
             >
-              <div className="relative h-52">
+              <div className="relative h-52 overflow-hidden">
                 <Image
                   src={story.imageUrl}
                   alt={story.tag}
                   fill
-                  className="object-cover"
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
                   unoptimized
                 />
               </div>
@@ -61,7 +61,7 @@ export function SuccessStories() {
                   {story.headline}
                 </h3>
                 <p className="text-muted text-sm leading-relaxed flex-1">
-                  {story.quote}
+                  &ldquo;{story.quote}&rdquo;
                 </p>
               </div>
             </div>

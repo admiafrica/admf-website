@@ -50,20 +50,34 @@ export function ImpactReports() {
           </h2>
         </div>
 
-        {/* Impact report buttons */}
-        <div className="flex flex-wrap justify-center gap-3 mb-4">
+        {/* Reports grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-4">
           {reports.map((r) => (
-            <a key={r.label} href={r.href} className="btn btn-outline text-sm">
-              {r.label}
+            <a
+              key={r.label}
+              href={r.href}
+              className="group card-light p-5 flex flex-col items-center text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-200"
+            >
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors">
+                <svg className="w-5 h-5 text-admf-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+              </div>
+              <span className="text-sm font-medium text-foreground">{r.label.replace("Download ", "")}</span>
             </a>
           ))}
         </div>
 
-        {/* Evaluation report buttons */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        {/* Evaluation reports */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto mb-12">
           {evaluations.map((r) => (
-            <a key={r.label} href={r.href} className="btn btn-outline text-sm">
-              {r.label}
+            <a
+              key={r.label}
+              href={r.href}
+              className="group card-light p-5 flex flex-col items-center text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-200"
+            >
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors">
+                <svg className="w-5 h-5 text-admf-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+              </div>
+              <span className="text-sm font-medium text-foreground">{r.label.replace("Download ", "")}</span>
             </a>
           ))}
         </div>
@@ -74,15 +88,22 @@ export function ImpactReports() {
             Headline Lessons Learned
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {lessons.map((lesson) => (
+            {lessons.map((lesson, i) => (
               <div
                 key={lesson.title}
-                className="bg-white/5 border border-white/10 rounded-lg p-5"
+                className="bg-white/5 border border-white/10 rounded-lg p-5 hover:bg-white/10 transition-colors duration-200"
               >
-                <h4 className="text-primary font-bold mb-2">{lesson.title}</h4>
-                <p className="text-white/70 text-sm leading-relaxed">
-                  {lesson.text}
-                </p>
+                <div className="flex items-start gap-4">
+                  <span className="text-primary/40 text-3xl font-bold leading-none shrink-0">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h4 className="text-primary font-bold mb-2">{lesson.title}</h4>
+                    <p className="text-white/70 text-sm leading-relaxed">
+                      {lesson.text}
+                    </p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
