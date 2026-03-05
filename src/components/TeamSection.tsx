@@ -30,14 +30,13 @@ export function TeamSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {team.map((member) => (
-            <div key={member.name} className="text-center">
-              <div className="relative w-64 h-64 md:w-48 md:h-48 mx-auto mb-4 rounded-xl overflow-hidden">
+            <div key={member.name} className="text-center group">
+              <div className="relative w-64 h-64 md:w-64 md:h-64 lg:w-72 lg:h-72 mx-auto mb-4 rounded-xl overflow-hidden ring-2 ring-transparent group-hover:ring-primary/30 transition-all duration-200">
                 <Image
                   src={member.imageUrl}
                   alt={member.name}
                   fill
-                  className="object-cover"
-                  unoptimized
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <h3 className="text-lg font-bold text-foreground">{member.name}</h3>

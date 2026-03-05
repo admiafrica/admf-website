@@ -253,6 +253,21 @@ a {
   opacity: 0.9;
 }
 
+/* Focus visible for accessibility */
+.btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
 /* Badge variants */
 .badge {
   display: inline-flex;
@@ -302,13 +317,14 @@ a {
   background: var(--bg-card-dark);
 }
 
-/* Hero gradient overlay - less coverage on mobile to show more of the image */
+/* Hero gradient overlay - bottom-up on mobile, left-to-right on desktop */
 .hero-gradient {
-  background: linear-gradient(to right, #002A23 10%, transparent 40%);
+  background:
+    linear-gradient(to top, #002A23 20%, rgba(0,42,35,0.7) 40%, rgba(0,42,35,0.4) 60%, rgba(0,42,35,0.15) 75%, transparent 90%);
 }
 @media (min-width: 768px) {
   .hero-gradient {
-    background: linear-gradient(to right, #002A23 25%, transparent 50%);
+    background: linear-gradient(to right, #002A23 15%, rgba(0,42,35,0.6) 35%, rgba(0,42,35,0.25) 50%, transparent 65%);
   }
 }
 

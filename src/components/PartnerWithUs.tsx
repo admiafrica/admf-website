@@ -20,7 +20,7 @@ export function PartnerWithUs() {
               href="mailto:partnerships@africadigitalmedia.org"
               className="btn btn-primary"
             >
-              partnerships@africadigitalmedia.org
+              Start a Conversation
             </a>
           </div>
         </div>

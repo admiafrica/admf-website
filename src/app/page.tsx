@@ -9,7 +9,7 @@ import { PartnerWithUs } from "@/components/PartnerWithUs";
 
 const stats = [
   { value: "12+", label: "Years of Impact" },
-  { value: "20,000+", label: "Students Trained (4,000 certified)" },
+  { value: "20,000+", label: "Students Trained" },
   { value: "86%", label: "Graduate Employment Rate" },
   { value: "40", label: "Countries" },
 ];
@@ -22,7 +22,8 @@ export default function HomePage() {
         <HeroSection
           title="Empowering Africa's next generation of creative talent."
           subtitle="Through scholarships, mentorship, and equipment grants, we support storytellers, filmmakers, musicians, and game developers building SDG-aligned solutions."
-          primaryCta={{ label: "Donate Now", href: "#partner" }}
+          primaryCta={{ label: "Get Involved", href: "#partner" }}
+          secondaryCta={{ label: "See Our Impact", href: "#impact" }}
           heroImage="/images/students/students-photography-session.jpg"
           showBadge
         />
@@ -39,17 +40,17 @@ export default function HomePage() {
       {/* Success Stories */}
       <SuccessStories />
 
-      {/* Partners */}
+      {/* Partners (social proof before the ask) */}
       <PartnerLogos />
 
-      {/* Impact Reports & Lessons Learned */}
-      <ImpactReports />
+      {/* CTA (while trust is high) */}
+      <PartnerWithUs />
 
       {/* Our Team */}
       <TeamSection />
 
-      {/* Partner With Us */}
-      <PartnerWithUs />
+      {/* Impact Reports (resources for the already-convinced) */}
+      <ImpactReports />
     </>
   );
 }

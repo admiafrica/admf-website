@@ -9,20 +9,25 @@ const navItems = [
   { label: "Programs", href: "#programs" },
   { label: "Stories", href: "#stories" },
   { label: "Partners", href: "#partners" },
-  { label: "Reports", href: "#reports" },
   { label: "Team", href: "#team" },
 ];
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+    const validHrefs = new Set(navItems.map((item) => item.href));
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            setActiveSection(`#${entry.target.id}`);
+            const href = `#${entry.target.id}`;
+            if (validHrefs.has(href)) {
+              setActiveSection(href);
+            }
           }
         }
       },
@@ -30,7 +35,11 @@ export function Header() {
     );
 
     const sections = document.querySelectorAll("section[id]");
-    sections.forEach((section) => observer.observe(section));
+    sections.forEach((section) => {
+      if (validHrefs.has(`#${section.id}`)) {
+        observer.observe(section);
+      }
+    });
 
     return () => observer.disconnect();
   }, []);
@@ -49,11 +58,7 @@ export function Header() {
         <div className="flex items-center justify-between h-[72px]">
           {/* Logo */}
           <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
+            href="/"
             className="flex items-center gap-2"
           >
             <Image
@@ -80,7 +85,7 @@ export function Header() {
                 }}
                 className={cn(
                   "px-3 py-2 text-sm font-medium transition-colors relative",
-                  activeSection === item.href
+                  mounted && activeSection === item.href
                     ? "text-foreground after:absolute after:bottom-0 after:left-3 after:right-3 after:h-0.5 after:bg-primary after:rounded-full"
                     : "text-muted hover:text-foreground"
                 )}
@@ -93,7 +98,7 @@ export function Header() {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
             <a href="#partner" onClick={(e) => { e.preventDefault(); handleNavClick("#partner"); }} className="btn btn-primary text-sm">
-              Donate
+              Get Involved
             </a>
           </div>
 
@@ -139,7 +144,7 @@ export function Header() {
                 }}
                 className={cn(
                   "px-3 py-3 text-base font-medium transition-colors border-l-2",
-                  activeSection === item.href
+                  mounted && activeSection === item.href
                     ? "text-foreground border-primary"
                     : "text-muted hover:text-foreground border-transparent"
                 )}
@@ -153,7 +158,7 @@ export function Header() {
                 onClick={(e) => { e.preventDefault(); handleNavClick("#partner"); }}
                 className="btn btn-primary w-full text-center"
               >
-                Donate
+                Get Involved
               </a>
             </div>
           </div>

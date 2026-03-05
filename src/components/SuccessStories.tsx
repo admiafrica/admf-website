@@ -4,24 +4,22 @@ const stories = [
   {
     tag: "The Global Freelancer",
     headline: "From Nairobi to the World",
-    quote:
-      "A graduate working internationally, proving that ADMI's training meets global standards and that greater exposure to international markets could transform outcomes for more graduates.",
+    summary:
+      "An ADMI graduate now works internationally, proving that our training meets global standards. Greater exposure to international markets could transform outcomes for more graduates.",
     imageUrl: "/images/students/student-group-1.jpg",
   },
   {
     tag: "The Refugee Creator",
-    headline:
-      "From the camp to the camera",
-    quote:
-      "How a graduate transitioned from a 7-week film course to producing professional content. 71% of alumni find work through ADMI's network.",
+    headline: "From the Camp to the Camera",
+    summary:
+      "A graduate transitioned from a 7-week film course to producing professional content. 71% of alumni find work through ADMI's network.",
     imageUrl: "/images/students/student-group-2.jpg",
   },
   {
     tag: "Women in Tech",
-    headline:
-      "Breaking the Screen",
-    quote:
-      "How a woman who had never used a professional camera now earns a living in the digital economy. Ganjisha reached 3,934 women.",
+    headline: "Breaking the Screen",
+    summary:
+      "A woman who had never used a professional camera now earns a living in the digital economy. Ganjisha has reached 3,934 women across Kenya.",
     imageUrl: "/images/students/student-session.jpg",
   },
 ];
@@ -42,15 +40,14 @@ export function SuccessStories() {
           {stories.map((story) => (
             <div
               key={story.tag}
-              className="card-light overflow-hidden flex flex-col"
+              className="card-light overflow-hidden flex flex-col hover:shadow-lg hover:-translate-y-1 transition-all duration-200 group"
             >
-              <div className="relative h-52">
+              <div className="relative h-52 overflow-hidden">
                 <Image
                   src={story.imageUrl}
                   alt={story.tag}
                   fill
-                  className="object-cover"
-                  unoptimized
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="p-6 flex flex-col flex-1">
@@ -61,7 +58,7 @@ export function SuccessStories() {
                   {story.headline}
                 </h3>
                 <p className="text-muted text-sm leading-relaxed flex-1">
-                  {story.quote}
+                  {story.summary}
                 </p>
               </div>
             </div>
