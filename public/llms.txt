@@ -1,0 +1,16 @@
+# ADMI Foundation
+
+> Empowering Africa's creative talent through education, mentorship, and opportunity.
+
+The ADMI Foundation is a philanthropic organization dedicated to nurturing Africa's next generation of creative professionals — filmmakers, animators, musicians, and game developers. Since 2018, the foundation has trained over 20,000 students, awarded 500+ scholarships, and achieved an 86% graduate employment rate across 40 countries.
+
+## Pages
+
+- [Home](https://admifoundation.org/): Overview of the foundation's mission, key stats, programmes, success stories, and partners.
+- [About](https://admifoundation.org/about): Mission, vision, leadership team, and organizational timeline.
+- [Programmes](https://admifoundation.org/programmes): Details on scholarship, mentorship, and equipment grant programmes.
+- [Impact](https://admifoundation.org/impact): Data and stories demonstrating the foundation's impact across Africa.
+- [Get Involved](https://admifoundation.org/get-involved): Ways to support the foundation through donations, partnerships, and volunteering.
+- [Contact](https://admifoundation.org/contact): Contact form and information for reaching the foundation.
+- [Terms of Service](https://admifoundation.org/terms): Terms governing use of the website.
+- [Privacy Policy](https://admifoundation.org/privacy): How personal data is collected and used.

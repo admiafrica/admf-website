@@ -1,3 +1,6 @@
-# Disallow all crawlers - site under development
+# Allow all crawlers
 User-agent: *
-Disallow: /
+Allow: /
+
+# Sitemap
+Sitemap: https://admifoundation.org/sitemap.xml
