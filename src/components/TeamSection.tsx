@@ -23,7 +23,7 @@ export function TeamSection() {
           </span>
           <h2 className="section-heading section-heading-light">Our Team</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
           {team.map((member) => (
             <div key={member.name} className="text-center group">
               <div className="relative w-64 h-64 md:w-64 md:h-64 lg:w-72 lg:h-72 mx-auto mb-4 rounded-xl overflow-hidden ring-2 ring-transparent group-hover:ring-primary/30 transition-all duration-200">

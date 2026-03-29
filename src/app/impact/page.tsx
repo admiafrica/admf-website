@@ -8,29 +8,49 @@ export const metadata: Metadata = {
     "Download ADMI Foundation impact reports, evaluations, and research documenting our work across 40 countries.",
 };
 
+const cdnBase = "https://d24a9cbgqb2uah.cloudfront.net/reports";
+
 const reports = [
   {
     title: "2025 Impact Report",
     description: "Our latest annual review covering programmes, outcomes, and strategic direction.",
-    href: "#",
+    href: `${cdnBase}/ADMF-2025-Annual-Report.html`,
     year: "2025",
   },
   {
     title: "2024 Impact Report",
     description: "Key milestones including AI Academy launch and Google Ganjisha nationwide expansion.",
-    href: "#",
+    href: `${cdnBase}/ADMF-2024-Annual-Impact-Report.pdf`,
     year: "2024",
   },
   {
     title: "2023 Impact Report",
     description: "Growth across refugee camp programmes and MCF Sanara animation training.",
-    href: "#",
+    href: `${cdnBase}/ADMF-2023-Annual-Impact-Report.pdf`,
     year: "2023",
+  },
+  {
+    title: "2022 Impact Report",
+    description: "Programme expansion and community impact across East Africa.",
+    href: `${cdnBase}/ADMF-2022-Annual-Impact-Report.pdf`,
+    year: "2022",
+  },
+  {
+    title: "2021 Impact Report",
+    description: "Adapting programmes during the pandemic and growing digital training capacity.",
+    href: `${cdnBase}/ADMF-2021-Annual-Impact-Report.pdf`,
+    year: "2021",
+  },
+  {
+    title: "2020 Impact Report",
+    description: "Responding to COVID-19 while maintaining training outcomes for students across Africa.",
+    href: `${cdnBase}/ADMF-2020-Annual-Impact-Report.pdf`,
+    year: "2020",
   },
   {
     title: "10 Years of Impact",
     description: "A comprehensive retrospective of a decade of creative talent development across Africa.",
-    href: "#",
+    href: `${cdnBase}/ADMF-10-Years-of-Impact-2022.pdf`,
     year: "2013–2023",
   },
 ];
@@ -38,13 +58,13 @@ const reports = [
 const evaluations = [
   {
     title: "Kilifi Challenge Fund Report",
-    description: "Independent evaluation of the CFYE audiovisual accelerator in Kilifi County.",
-    href: "#",
+    description: "Independent evaluation of the CFYE audiovisual accelerator in Kilifi County. Summary coming soon.",
+    comingSoon: true,
   },
   {
     title: "Ganjisha Project Endline Evaluation",
-    description: "Final evaluation of the Google-funded nationwide content creation training programme.",
-    href: "#",
+    description: "Final evaluation of the Google-funded nationwide content creation training programme. Summary coming soon.",
+    comingSoon: true,
   },
 ];
 
@@ -70,6 +90,8 @@ export default function ImpactPage() {
                 <a
                   key={report.title}
                   href={report.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="card-light p-6 flex items-center gap-6 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 group"
                 >
                   <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
@@ -96,19 +118,23 @@ export default function ImpactPage() {
             </h2>
             <div className="space-y-4">
               {evaluations.map((report) => (
-                <a
+                <div
                   key={report.title}
-                  href={report.href}
-                  className="card-light p-6 flex items-center gap-6 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 group"
+                  className="card-light p-6 flex items-center gap-6"
                 >
-                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
                     <svg className="w-6 h-6 text-admf-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-bold text-foreground mb-1">{report.title}</h3>
                     <p className="text-muted text-sm">{report.description}</p>
                   </div>
-                </a>
+                  {report.comingSoon && (
+                    <span className="text-xs font-medium text-amber-600 bg-amber-50 px-3 py-1 rounded-full shrink-0">
+                      Coming Soon
+                    </span>
+                  )}
+                </div>
               ))}
             </div>
           </div>
